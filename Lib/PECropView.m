@@ -192,7 +192,11 @@ static const CGFloat MarginRight = MarginLeft;
     self.zoomingView = [[UIView alloc] initWithFrame:self.scrollView.bounds];
     self.zoomingView.backgroundColor = [UIColor clearColor];
     [self.scrollView addSubview:self.zoomingView];
-    
+
+    //choicer & ios7 changing
+    self.zoomingView.frame = CGRectMake(0, 0, self.zoomingView.frame.size.width, self.zoomingView.frame.size.height);
+    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+
     self.imageView = [[UIImageView alloc] initWithFrame:self.zoomingView.bounds];
     self.imageView.backgroundColor = [UIColor clearColor];
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -456,8 +460,8 @@ static const CGFloat MarginRight = MarginLeft;
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-    CGPoint contentOffset = scrollView.contentOffset;
-    *targetContentOffset = contentOffset;
+//    CGPoint contentOffset = scrollView.contentOffset;
+//    *targetContentOffset = contentOffset;
 }
 
 @end

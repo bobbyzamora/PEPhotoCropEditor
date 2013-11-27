@@ -69,6 +69,9 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
     
     self.cropView.image = self.image;
 }
+- (void)viewWillAppear:(BOOL)animated {
+    [self setCropAspectRatio:1.0];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
